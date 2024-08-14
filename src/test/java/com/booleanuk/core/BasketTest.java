@@ -17,4 +17,11 @@ class BasketTest {
         basket.addToBasket("plain", 1);
         Assertions.assertEquals(0, basket.getBasket().size());
     }
+
+    @Test
+    public void testAdding0Bagels() {
+        Basket basket = new Basket();
+        basket.addToBasket("everything", 0);
+        Assertions.assertEquals(0, basket.getBasket().size());
+    }
 }
