@@ -42,5 +42,6 @@ class BasketTest {
         Basket basket = new Basket(20);
         basket.addToBasket("everything", 20);
         Assertions.assertTrue(basket.order());
+        Assertions.assertEquals(0, basket.getBasket().size());
     }
 }
