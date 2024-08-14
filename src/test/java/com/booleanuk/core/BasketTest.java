@@ -3,9 +3,6 @@ package com.booleanuk.core;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
-
 class BasketTest {
     @Test
     public void testAddingBagels() {
@@ -39,9 +36,23 @@ class BasketTest {
 
     @Test
     public void testOrder() {
-        Basket basket = new Basket(20);
-        basket.addToBasket("everything", 20);
+        Basket basket = new Basket();
+        basket.addToBasket("everything", 1);
         Assertions.assertTrue(basket.order());
         Assertions.assertEquals(0, basket.getBasket().size());
     }
+
+    @Test
+    public void testRemoveBagel() {
+        Basket basket = new Basket();
+        basket.addToBasket("everything", 1);
+        basket.addToBasket("sesame", 2);
+        Assertions.assertEquals(3, basket.getBasket().size());
+        basket.remove("sesame");
+        Assertions.assertEquals(2, basket.getBasket().size());
+        Assertions.assertTrue(basket.contains("everything"));
+        Assertions.assertTrue(basket.contains("sesame"));
+    }
+
+
 }
