@@ -7,14 +7,25 @@ public class Basket {
     ArrayList<String> bagels;
     final String[] allowedTypes;
     int basketSize;
+    int standardBasketSize = 10;
+    boolean userIsBob;
 
     public Basket() {
+        userIsBob = false;
         bagels = new ArrayList<>();
         allowedTypes = new String[]{"everything", "whole_wheat", "chocolate_chip", "onion", "sesame", "poppy"};
-        basketSize = 10; // Default value
+        basketSize = standardBasketSize;
     }
 
     public Basket(int basketSize) {
+        userIsBob = false;
+        bagels = new ArrayList<>();
+        allowedTypes = new String[]{"everything", "whole_wheat", "chocolate_chip", "onion", "sesame", "poppy"};
+        this.basketSize = basketSize;
+    }
+
+    public Basket(int basketSize, boolean userIsBob) {
+        this.userIsBob = userIsBob;
         bagels = new ArrayList<>();
         allowedTypes = new String[]{"everything", "whole_wheat", "chocolate_chip", "onion", "sesame", "poppy"};
         this.basketSize = basketSize;
@@ -43,5 +54,12 @@ public class Basket {
 
     public void remove(String bagelType) {
         bagels.remove(bagelType);
+    }
+
+    public void setBasketSize(int basketSize) {
+        if (userIsBob) {
+            this.basketSize = basketSize;
+            standardBasketSize = basketSize;
+        }
     }
 }
