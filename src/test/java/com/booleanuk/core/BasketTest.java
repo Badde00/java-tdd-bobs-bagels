@@ -54,5 +54,17 @@ class BasketTest {
         Assertions.assertTrue(basket.contains("sesame"));
     }
 
+    @Test
+    public void changeBasketSize() {
+        Basket basket = new Basket(10, true);
+        basket.addToBasket("everything", 3);
+        Assertions.assertEquals(3, basket.getBasket().size());
+        basket.addToBasket("everything", 10);
+        Assertions.assertEquals(3, basket.getBasket().size());
+        basket.setBasketSize(20);
+        basket.addToBasket("everything", 10);
+        Assertions.assertEquals(13, basket.getBasket().size());
+    }
+
 
 }
