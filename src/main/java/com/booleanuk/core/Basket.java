@@ -30,4 +30,10 @@ public class Basket {
     public ArrayList<String> getBasket() {
         return bagels;
     }
+
+    public boolean order() {
+        System.out.printf("Order of %d bagels sent", bagels.size());
+        bagels = new ArrayList<>();
+        return true;
+    }
 }
