@@ -36,4 +36,12 @@ public class Basket {
         bagels = new ArrayList<>();
         return true;
     }
+
+    public boolean contains(String bagelType) {
+        return bagels.contains(bagelType);
+    }
+
+    public void remove(String bagelType) {
+        bagels.remove(bagelType);
+    }
 }
