@@ -10,4 +10,11 @@ class BasketTest {
         basket.addToBasket("plain", 1);
         Assertions.assertEquals(1, basket.getBasket().size());
     }
+
+    @Test
+    public void testAddingUnavailableType() {
+        Basket basket = new Basket();
+        basket.addToBasket("plain", 1);
+        Assertions.assertEquals(0, basket.getBasket().size());
+    }
 }
