@@ -24,4 +24,13 @@ class BasketTest {
         basket.addToBasket("everything", 0);
         Assertions.assertEquals(0, basket.getBasket().size());
     }
+
+    @Test
+    public void testAddingTooManyBagels() {
+        Basket basket = new Basket(20);
+        basket.addToBasket("everything", 20);
+        Assertions.assertEquals(20, basket.getBasket().size());
+        basket.addToBasket("everything", 1);
+        Assertions.assertEquals(20, basket.getBasket().size());
+    }
 }
