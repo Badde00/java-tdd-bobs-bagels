@@ -1,10 +1,10 @@
 | Classes  | Variables                           | Methods                                    | Scenario                                            | Outcome                                        |
 |----------|-------------------------------------|--------------------------------------------|-----------------------------------------------------|------------------------------------------------|
 | `Basket` | `List<String> bagels`               | `addToBasket(String bagelType, int amount` | bagelType is available                              | bagelType is added amount times to bagels list |
-|          |                                     |                                            | bagelType not available                             | user notified that bagels not added            |
+|          | `String[] allowedTypes`             |                                            | bagelType not available                             | user notified that bagels not added            |
 |          |                                     |                                            | amount is <1                                        | user warned that amount is insufficient        |
 |          | `int basketSize`                    |                                            | basket overfull (bagels.size()+amount > basketSize) | bagels not added, user warned of full basket   |
-|          | `List<String> bagels`               | `order()`                                  | items in bagels                                     | order sent to store                            |
+|          |                                     | `order()`                                  | items in bagels                                     | order sent to store                            |
 |          |                                     |                                            | bagels list empty                                   | warning given                                  |
 |          |                                     | `removeBagel(String bagelType)`            | bagel of bagelType in bagels list                   | one bagel of bagelType is removed              |
 |          |                                     |                                            | no bagel of bagelType in bagels list                | no bagel removed, user warned                  |
